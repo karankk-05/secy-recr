@@ -1,0 +1,4 @@
+#Sun May 19 21:19:04 IST 2024
+base.0=C\:\\Users\\sushi\\OneDrive\\Desktop\\Mail Client assignment\\Assignment 1\\campus_ebay\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
