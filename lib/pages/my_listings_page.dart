@@ -12,9 +12,8 @@ class _ListingsHomePageState extends State<ListingsHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My Listings'),
-      ),
+      appBar:null,
+      
       body: Padding(
         padding: EdgeInsets.all(8.0),
         child: Consumer<ProductProvider>(

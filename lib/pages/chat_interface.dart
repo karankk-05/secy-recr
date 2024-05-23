@@ -28,13 +28,20 @@ class _ChatInterfaceState extends State<ChatInterface> {
             flex: 1, // 1/4th of the screen
             child: ChatList(onSelectUser: onSelectUser),
           ),
+          VerticalDivider(
+        width: 1, // Width of the divider
+        thickness: 1, // Thickness of the divider
+        color: Theme.of(context).colorScheme.primaryContainer, // Color of the divider
+      ),
           Expanded(
             flex: 3, // 3/4th of the screen
             child: selectedUser != null
                 ? ChatScreen(user: selectedUser!)
-                : Center(
-                    child: Text('Select a chat to start messaging',style: mytext.headingtext1(fontSize: 20),),
-                  ),
+                : Container(
+                  child: Center(
+                      child: Text('Select a chat to start messaging',style: mytext.headingtext1(fontSize: 20),),
+                    ),
+                ),
           ),
         ],
       ),

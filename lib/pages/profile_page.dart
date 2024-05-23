@@ -189,17 +189,18 @@ class ProfilePage extends StatelessWidget {
                         ],
                       ),
                       child: user.imageUrl != null
-    ? Image.network(
-        user.imageUrl!,
-        width: 350,
-        height: 350,
-        fit: BoxFit.cover,
-      )
-    : Icon(
-        Icons.person,
-        size: 150,
-        color: Colors.white,
-      ), // Placeholder icon
+                        ? Image.network(
+                            user.imageUrl!,
+                            width: 350,
+                            height: 350,
+                            fit: BoxFit.cover,
+                          )
+                        : Image.asset(
+                            'assets/pngtree-upload-button-design-icon-clipart-vector-png-image_6318335.png', // Path to initial image
+                            width: 350,
+                            height: 350,
+                            fit: BoxFit.cover,
+                          ),
                     ),
                   ],
                 ),
@@ -251,7 +252,7 @@ class ProfileDetailCard extends StatelessWidget {
             ),
             SizedBox(height: 8),
             Text(
-              detail != null ? detail : 'Add',
+              detail.isNotEmpty ? detail : 'Add Your $title',
               style: TextStyle(
                 fontSize: 16,
                 color: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -263,6 +264,7 @@ class ProfileDetailCard extends StatelessWidget {
     );
   }
 }
+
 
 class ProfileDetailCard2 extends StatelessWidget {
   final String title;

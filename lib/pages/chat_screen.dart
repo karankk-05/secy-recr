@@ -34,9 +34,16 @@ class _ChatScreenState extends State<ChatScreen> {
     User user = Provider.of<UserProvider>(context).user;
     return Column(
       children: [
-        Container(
-          color: Theme.of(context).colorScheme.primary,
-          padding: EdgeInsets.all(16),
+        Container(decoration: BoxDecoration(
+    border: Border.all(
+      color: Colors.white, // Set the color of the border
+      width: 1.0, // Set the width of the border
+    ),
+    borderRadius: BorderRadius.circular(8.0), // Optional: Add rounded corners
+    color: Theme.of(context).colorScheme.primary, // Background color (repeated here because color in Container is overridden by BoxDecoration)
+  ),
+          
+          padding: EdgeInsets.all(8),
           child: Row(
             children: [
               CircleAvatar(
@@ -75,12 +82,14 @@ class _ChatScreenState extends State<ChatScreen> {
                         Container(
                           decoration: BoxDecoration(
                             color: message.isCurrentUser
-                                ? Theme.of(context).colorScheme.primaryContainer
-                                : Theme.of(context).colorScheme.secondaryContainer,
+                                ? Theme.of(context).colorScheme.onPrimary
+                                : Theme.of(context).colorScheme.primaryContainer,
                             borderRadius: BorderRadius.circular(12),
                           ),
                           padding: EdgeInsets.all(12),
-                          child: Text(message.content),
+                          child: Text(message.content,style: TextStyle(color: message.isCurrentUser
+                                ? Theme.of(context).colorScheme.primary
+                                : Theme.of(context).colorScheme.onBackground,),),
                         ),
                         if (message.isCurrentUser) ...[
                           SizedBox(width: 8),
@@ -108,21 +117,32 @@ class _ChatScreenState extends State<ChatScreen> {
             children: [
               Expanded(
                 child: TextField(
-                  controller: _messageController,
-                  decoration: InputDecoration(
-                    hintText: 'Type a message...',
-                    border: OutlineInputBorder(),
-                  ),
-                  onSubmitted: (value) {
-                    _sendMessage();
-                  },
-                ),
-              ),
-              SizedBox(width: 8),
-              IconButton(
-                icon: Icon(Icons.send),
-                onPressed: _sendMessage,
-              ),
+  controller: _messageController,
+  decoration: InputDecoration(
+    hintText: 'Type a message...',
+    hintStyle: TextStyle(color: Colors.white54), // Hint text color
+    border: OutlineInputBorder(
+      borderSide: BorderSide(color: Colors.white), // Border color
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: Colors.white), // Border color when the TextField is enabled
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: Colors.white), // Border color when the TextField is focused
+    ),
+  ),
+  style: TextStyle(color: Colors.white), // Input text color
+  cursorColor: Colors.white, // Cursor color
+  onSubmitted: (value) {
+    _sendMessage();
+  },
+),),
+SizedBox(width: 8),
+IconButton(
+  icon: Icon(Icons.send, color: Colors.white), // Send icon color
+  onPressed: _sendMessage,
+),
+
             ],
           ),
         ),

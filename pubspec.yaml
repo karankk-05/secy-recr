@@ -30,6 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_maps_flutter: ^2.0.6
+  geocoding: ^2.0.4
+  url_launcher: ^6.0.9
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -39,9 +43,11 @@ dependencies:
   provider: ^6.1.2
   image_picker: ^1.1.1
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  google_maps_flutter_web: ^0.3.1+4
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -79,6 +85,12 @@ flutter:
     - assets/10.jpeg
     - assets/13.jpeg
     - assets/14.jpeg
+    - assets/Screenshot 2024-05-23 220456.png
+    - assets/Screenshot 2024-05-23 220519.png
+    - assets/Screenshot 2024-05-23 220801.png
+    - assets/Screenshot 2024-05-23 220928.png
+    - assets/Screenshot 2024-05-23 221028.png
+    - assets/pngtree-upload-button-design-icon-clipart-vector-png-image_6318335.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

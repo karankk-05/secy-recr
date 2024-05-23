@@ -66,16 +66,44 @@ class product_details {
     '429990',
     '249990'
   ];
-
-  static var productCategories = [
-  'Electronics',
-  'Clothing',
-  'Books',
-  'Home & Kitchen',
-  'Beauty & Personal Care',
-  'Sports & Outdoors',
-  'Toys & Games',
-  // Add more categories as needed
+static var seller = [
+    "Aditya Kumar",
+    "Neha Singh",
+    "Rajesh Gupta",
+    "Priya Sharma",
+    "Rohan Tiwari",
+    "Ananya Mishra",
+    "Saurabh Patel",
+    "Swati Dubey",
+    "Vikram Singh",
+    "Ritu Verma",
+    "Harsh Agarwal",
+    "Kamal Singh",
+    "Ritesh Chouhan",
+    "Rohit Sharma",
+    "Rohit Sharma",
 ];
+static var addresses = [
+  
+    "B-107, Hall 1, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "A-303, Hall 6, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "B-110, Hall 10, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "B-101, Hall 6, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "C-209, Hall 9, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "A-205, Hall 6, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "B-206, Hall 5, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "D-108, Hall 4, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "B-202, Hall 6, IIT Kanpur, Kanpur, Uttar Pradesh, India"
+    "A-104, Hall 2, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "A-202, Hall 3, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "B-304, Hall 5, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "C-204, Hall 12, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "B-104, Hall 12, IIT Kanpur, Kanpur, Uttar Pradesh, India",
+    "A-104, Hall 12, IIT Kanpur, Kanpur, Uttar Pradesh, India"
+
+
+];
+
+
 
 }

@@ -9,7 +9,17 @@ import 'pages/mainpage.dart';
 import 'package:provider/provider.dart';
 import 'models/user.dart';
 import 'models/product.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:google_maps_flutter_web/google_maps_flutter_web.dart';
+import 'package:flutter/foundation.dart';
+
+import 'dart:io' show Platform;
+
+// Define kIsWeb constant if it's not available
+const bool kIsWeb = identical(0, 0.0);
+
 void main() {
+  if (kIsWeb) {
   runApp(
     MultiProvider(
       providers: [
@@ -19,7 +29,7 @@ void main() {
       ],
       child: MyApp(),
     ),
-  );
+  );}
 }
 
 

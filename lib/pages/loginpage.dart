@@ -39,7 +39,13 @@ class _loginpageState extends State<loginpage> {
           alignment: Alignment.centerLeft,
           decoration: mydeco.deco(),
           height: 60.0,
-          child: TextField(
+          child: TextFormField(
+            validator: (value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter e-mail';
+    }
+    return null;
+  },
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
@@ -75,7 +81,13 @@ class _loginpageState extends State<loginpage> {
           alignment: Alignment.centerLeft,
           decoration: mydeco.deco(),
           height: 60.0,
-          child: TextField(
+          child: TextFormField(
+            validator: (value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter correct password';
+    }
+    return null;
+  },
             obscureText: true,
             style: TextStyle(
               color: Colors.white,
@@ -101,14 +113,27 @@ class _loginpageState extends State<loginpage> {
   void _login() {
     final String email = _emailController.text;
     final String password = _passwordController.text;
-
+if (email.isEmpty || password.isEmpty) {
+    // Show a snackbar or some other feedback to inform the user
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(backgroundColor:Theme.of(context).colorScheme.primaryContainer ,
+        content: Text('Please enter both email and password',style: TextStyle(color: Theme.of(context).colorScheme.onBackground),),
+        duration: Duration(seconds: 2),
+      ),
+    );
+    return; // Do not proceed with login
+  }
     // Here you can handle the login logic, for example by using the UserProvider
     final userProvider = Provider.of<UserProvider>(context, listen: false);
     userProvider.updateUser(email: email, password: password);
-
+ Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MainPage(),
+          ),
+          );
     // Print or handle the email and password as needed
-    print('Email: $email');
-    print('Password: $password');
+  
   }
   Widget _ForgotPasswordBtn() {
     return Container(
@@ -158,12 +183,7 @@ class _loginpageState extends State<loginpage> {
       child: ElevatedButton(
         onPressed: () {
           _login();
-          Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MainPage(),
-          ),
-          );
+         
         },
         style: ButtonStyle(
           minimumSize: MaterialStateProperty.all(Size(100, 60)),
