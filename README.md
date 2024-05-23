@@ -1,6 +1,8 @@
 Link to the deployed app
 https://664f7f334bbcfe34655af971--dapper-moxie-94791d.netlify.app/
 
+I have created this app on flutter. 
+
 ## Intro
 -> So the app starts out with an animation of the App logo.
 
